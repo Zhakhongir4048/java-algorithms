@@ -1,6 +1,4 @@
-package org.example;
-
-import org.example.chapter_13.Graph;
+package org.example.chapter_13;
 
 public class Main {
     public static void main(String[] args) {
