@@ -1,20 +1,18 @@
 package org.example.chapter_13;
 
 public class Graph {
-    private static final int MAX_VERTS = 20; // Максимальное кол-во вершин
-    private Vertex[] vertexList; // Массив вершин
-    private int[][] adjMat; // Матрица смежности
+    private final int MAX_VERTS = 20; // Максимальное кол-во вершин
+    private Vertex vertexList[]; // Массив вершин
+    private int adjMat[][]; // Матрица смежности
     private int nVerts; // Текущее количество вершин
 
-    public Graph() {
-        vertexList = new Vertex[MAX_VERTS];
+    public Graph() { // Конструктор
+        vertexList = new Vertex[MAX_VERTS]; // Инициализируем массив вершин
         adjMat = new int[MAX_VERTS][MAX_VERTS]; // Матрица смежности. N*N
         nVerts = 0;
-        for (int i = 0; i < adjMat.length; i++) {
-            for (int j = 0; j < adjMat.length; j++) {
-                adjMat[i][j] = 0;
-            }
-        }
+        for (int j = 0; j < MAX_VERTS; j++) // Матрица смежности заполняется нулями
+            for (int k = 0; k < MAX_VERTS; k++)
+                adjMat[j][k] = 0;
     }
 
     public void addVertex(char lab) { // В аргументе передается метка
