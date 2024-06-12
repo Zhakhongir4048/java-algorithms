@@ -5,7 +5,7 @@ public class ArrayApp {
     public static void main(String[] args) {
         long[] arr; // Ссылка на массив
         arr = new long[100]; // Создание массива
-        int nElems = 0; // Количество элементов
+        int nElems; // Количество элементов
         int j; // Счетчик цикла
         long searchKey; // Ключи искомого элемента
 
@@ -24,8 +24,9 @@ public class ArrayApp {
         for (j = 0; j < nElems; j++) // Вывод элементов
             System.out.print(STR."\{arr[j]} ");
         System.out.println();
+        // ------------------------------------------------
 
-        searchKey = 88; // Поиск элемента с ключом 66
+        searchKey = 66; // Поиск элемента с ключом 66
         for (j = 0; j < nElems; j++) // Для каждого элемента
             if (arr[j] == searchKey) // Значение найдено?
                 break; // Да - выход из цикла
@@ -34,5 +35,23 @@ public class ArrayApp {
             System.out.println(STR."Can't find \{searchKey}"); // Да
         else
             System.out.println(STR."Found \{searchKey}"); // Нет
+        // ------------------------------------------------
+
+        searchKey = 55; // Удаление элемента с ключом 55
+        for (j = 0; j < nElems; j++) {
+            if (arr[j] == searchKey) { // Поиск удаляемого элемента
+                break;
+            }
+        }
+        // k = j, сделано для того, чтобы понять, где дыра, и откуда начать сдвиг последующих элементов
+        for (int k = j; k < nElems - 1; k++) { // Сдвиг последующих элементов
+            arr[k] = arr[k + 1]; // То есть правый элемент идёт влево, пустую ячейку так заполняем
+        }
+        nElems--; // Уменьшение размера
+
+        for (j = 0; j < nElems; j++) { // Вывод элементов
+            System.out.print(STR."\{arr[j]} ");
+        }
+        System.out.println();
     }
 }
