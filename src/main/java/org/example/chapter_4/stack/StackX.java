@@ -1,4 +1,4 @@
-package org.example.chapter_4;
+package org.example.chapter_4.stack;
 
 public class StackX<T> {
 
