@@ -12,6 +12,6 @@ public class Link {
     }
 
     public void displayLink() { // Вывод содержимого элемента
-        System.out.print(STR."{\{iData}, \{dData}} ");
+        System.out.print(iData + "," + dData + " ");
     }
 }

@@ -39,7 +39,7 @@ public class Reverser {
                 break;
             Reverser reverser = new Reverser(input); // Создание объекта Reverser
             output = reverser.doRev(); // Использование
-            System.out.println(STR."Reversed: \{output}");
+            System.out.println("Reversed: " + output);
         }
     }
 

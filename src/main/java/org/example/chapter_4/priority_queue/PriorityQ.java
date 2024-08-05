@@ -57,7 +57,7 @@ public class PriorityQ {
 
         while (!priorityQ.isEmpty()) {
             long item = priorityQ.remove();
-            System.out.print(STR."\{item} "); // 10, 20, 30, 40, 50
+            System.out.print(item + " "); // 10, 20, 30, 40, 50
         }
         System.out.println();
     }

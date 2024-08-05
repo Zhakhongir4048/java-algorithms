@@ -44,7 +44,7 @@ public class BitManipulation {
         int x2 = 277;
         int x3 = 432;
         int x4 = x2 & x3; // В десятичной системе 272 получилось в итоге
-        System.out.println(STR."x4 = \{x4}");
+        System.out.println("x4 = " + x4);
         System.out.println(Integer.toBinaryString(x4));
 
         /*  | — побитовое “ИЛИ”. Принцип работы тот же — сравниваем два числа по битам.
@@ -59,7 +59,7 @@ public class BitManipulation {
             Результат работы — число 110110101. В десятичной системе ему соответствует число 437.
          */
         int x5 = x2 | x3;
-        System.out.println(STR."x5 = \{x5}");
+        System.out.println("x5 = " + x5);
         System.out.println(Integer.toBinaryString(x5));
 
         /*  ^ — побитовое исключающее “ИЛИ” (также известно как XOR)

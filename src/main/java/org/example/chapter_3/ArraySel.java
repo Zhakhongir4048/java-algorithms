@@ -17,7 +17,7 @@ public class ArraySel {
 
     public void display() { // Вывод содержимого массива
         for (int i = 0; i < nElems; i++) { // Для каждого элемента
-            System.out.print(STR."\{a[i]} "); // Вывод
+            System.out.print(a[i] + " "); // Вывод
         }
         System.out.println();
     }

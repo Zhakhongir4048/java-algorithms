@@ -29,10 +29,10 @@ public class BracketChecker {
                     if (!stackX.isEmpty()) { // Если стек не пуст
                         char c1 = stackX.pop(); // Извлечь и проверить
                         if (c == ']' && c1 != '[' || c == '}' && c1 != '{' || c == ')' && c1 != '(') {
-                            System.out.println(STR."Error: \{c} at \{i}");
+                            System.out.println("Error: " + c + " at " + i);
                         }
                     } else { // Преждевременная нехватка элементов
-                        System.out.println(STR."Error: \{c} at \{i}");
+                        System.out.println("Error: " + c + " at " + i);
                     }
                     break;
                 default: // Для других символов действия не выполняются

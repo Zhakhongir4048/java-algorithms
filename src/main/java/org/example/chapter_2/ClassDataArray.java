@@ -66,7 +66,7 @@ public class ClassDataArray {
             System.out.print("Found");
             found.displayPerson();
         } else {
-            System.out.println(STR."Can't find \{searchKey}");
+            System.out.println("Can't find " + searchKey);
         }
 
         System.out.println("Deleting Smith, Yee, and Creswell");
