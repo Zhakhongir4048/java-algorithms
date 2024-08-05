@@ -2,7 +2,7 @@ package org.example.chapter_5;
 
 public class Link {
 
-    public int iData; // Данные
+    public int iData; // Данные (ключ)
     public double dData; // Данные
     public Link next; // Следующий элемент в списке
 
