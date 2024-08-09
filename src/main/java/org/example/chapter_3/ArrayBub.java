@@ -18,7 +18,7 @@ public class ArrayBub {
 
     public void display() { // Вывод содержимого массива
         for (int j = 0; j < nElems; j++) { // Для каждого элемента
-            System.out.print(STR."\{a[j]} "); // Вывод
+            System.out.print(a[j] + " "); // Вывод
         }
         System.out.println();
     }

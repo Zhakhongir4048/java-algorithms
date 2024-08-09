@@ -35,7 +35,7 @@ public class LowArray {
         nElems = 10; // Массив содержит 10 элементов
 
         for (j = 0; j < nElems; j++) { // Вывод элементов
-            System.out.print(STR."\{arr.getElem(j)} ");
+            System.out.print(arr.getElem(j) + " ");
         }
         System.out.println();
 
@@ -48,9 +48,9 @@ public class LowArray {
         }
 
         if (j == nElems) // Нет
-            System.out.println(STR."Can't find \{searchKey}");
+            System.out.println("Can't find " + searchKey);
         else // Да
-            System.out.println(STR."Found \{searchKey}");
+            System.out.println("Found " + searchKey);
 
 
         // Удаление элемента с ключом 55
@@ -65,7 +65,7 @@ public class LowArray {
         nElems--; // Уменьшение размера
 
         for (j = 0; j < nElems; j++) { // Вывод содержимого
-            System.out.print(STR."\{arr.getElem(j)} ");
+            System.out.print(arr.getElem(j) + " ");
         }
         System.out.println();
     }

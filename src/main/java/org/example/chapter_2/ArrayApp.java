@@ -22,7 +22,7 @@ public class ArrayApp {
         nElems = 10; // Массив содержит 10 элементов
 
         for (j = 0; j < nElems; j++) // Вывод элементов
-            System.out.print(STR."\{arr[j]} ");
+            System.out.print(arr[j] + " ");
         System.out.println();
         // ------------------------------------------------
 
@@ -32,9 +32,9 @@ public class ArrayApp {
                 break; // Да - выход из цикла
 
         if (j == nElems) // Достигнут последний элемент?
-            System.out.println(STR."Can't find \{searchKey}"); // Да
+            System.out.println("Can't find " + searchKey); // Да
         else
-            System.out.println(STR."Found \{searchKey}"); // Нет
+            System.out.println("Found " + searchKey); // Нет
         // ------------------------------------------------
 
         searchKey = 55; // Удаление элемента с ключом 55
@@ -50,7 +50,7 @@ public class ArrayApp {
         nElems--; // Уменьшение размера
 
         for (j = 0; j < nElems; j++) { // Вывод элементов
-            System.out.print(STR."\{arr[j]} ");
+            System.out.print(arr[j] + " ");
         }
         System.out.println();
     }

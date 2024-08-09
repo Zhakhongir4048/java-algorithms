@@ -15,9 +15,9 @@ public class Person {
     }
 
     public void displayPerson() {
-        System.out.print(STR." Last name: \{lastName}");
-        System.out.print(STR.", First name: \{firstName}");
-        System.out.println(STR.", Age: \{age}");
+        System.out.print(" Last name: " + lastName);
+        System.out.print(", First name: " + firstName);
+        System.out.println(", Age: " + age);
     }
 
     public String getLastName() { // Получение фамилии

@@ -39,7 +39,6 @@ public class OrdArray {
      * Сначала ищется индекс, куда вставим новый элемент.
      * То есть, первый элемент, который больше вставляемого.
      * Затем мы делаем перестановку, идём вправо, забирая слева элементы. Делаем дыру для вставки
-     *
      */
     public void insert(long value) { // Вставка элемента в массив
         int j;
@@ -71,7 +70,7 @@ public class OrdArray {
 
     public void display() { // Вывод содержимого массива
         for (int j = 0; j < nElems; j++) { // Перебор всех элементов
-            System.out.print(STR."\{a[j]} "); // Вывод текущего элемента
+            System.out.print(a[j] + " "); // Вывод текущего элемента
         }
         System.out.println();
     }
@@ -95,9 +94,9 @@ public class OrdArray {
 
         int searchKey = 55; // Поиск элемента
         if (arr.find(searchKey) != arr.size())
-            System.out.println(STR."Found \{searchKey}");
+            System.out.println("Found " + searchKey);
         else
-            System.out.println(STR."Can't find \{searchKey}");
+            System.out.println("Can't find " + searchKey);
 
         arr.display(); // Вывод содержимого
 

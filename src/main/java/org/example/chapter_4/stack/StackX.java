@@ -56,7 +56,7 @@ public class StackX<T> {
 
         while (!stack.isEmpty()) { // Пока стек не станет пустым
             Integer pop = stack.pop(); // Удалить элемент из стека
-            System.out.print(STR."\{pop} "); // Вывод содержимого
+            System.out.print(pop + " "); // Вывод содержимого
         }
         System.out.println();
     }

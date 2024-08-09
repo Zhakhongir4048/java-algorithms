@@ -42,7 +42,7 @@ public class HighArray {
 
     public void display() { // Вывод содержимого массива
         for (int i = 0; i < nElems; i++) {  // Для каждого элемента
-            System.out.print(STR."\{arr[i]} "); // Вывод
+            System.out.print(arr[i] + " "); // Вывод
         }
         System.out.println();
     }
@@ -69,9 +69,9 @@ public class HighArray {
         int searchKey = 35; // Поиск элемента
 
         if (arr.find(searchKey))
-            System.out.println(STR."Found \{searchKey}");
+            System.out.println("Found " + searchKey);
         else
-            System.out.println(STR."Can't find \{searchKey}");
+            System.out.println("Can't find " + searchKey);
 
         arr.delete(0); // Удаление трех элементов
         arr.delete(55);
