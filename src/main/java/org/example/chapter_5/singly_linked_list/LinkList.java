@@ -1,4 +1,4 @@
-package org.example.chapter_5;
+package org.example.chapter_5.singly_linked_list;
 
 public class LinkList {
 
