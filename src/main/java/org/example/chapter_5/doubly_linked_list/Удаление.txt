@@ -1,0 +1,24 @@
+Класс также содержит три метода удаления: deleteFirst(), deleteLast() и deleteKey().
+Первые два относительно тривиальны; в методе deleteKey() удаляется элемент current.
+Если удаляемый элемент не является ни первым, ни последним в списке, то в поле next элемента current.previous
+(элемент, предшествующий удаляемому) заносится ссылка на current.next (элемент, следующий после удаляемого),
+а в поле previous элемента current.next заносится ссылка на current.previous.
+В результате элемент current исключается из списка.
+Удаление, реализованное следующими двумя командами:
+current.previous.next = current.next;
+current.next.previous = current.previous;
+
+Если удаляемый элемент находится в первой или последней позиции списка, это
+особый случай, потому что ссылка на следующий или предыдущий элемент должна
+быть сохранена в поле first или last.
+Приведем соответствующий фрагмент кода deleteKey() для изменения ссылок:
+if (current == first) // Первый элемент?
+    first = current.next; // first --> старое значение next
+else // Не первый элемент
+    // старое значение previous --> старое значение next
+    current.previous.next = current.next;
+if (current == last) // Последний элемент?
+    last = current.previous; // старое значение previous <-- last
+else // Не последний элемент
+    // старое значение previous <-- старое значение next
+    current.next.previous = current.previous;
