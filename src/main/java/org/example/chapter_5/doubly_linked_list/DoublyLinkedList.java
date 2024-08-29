@@ -69,4 +69,46 @@ class DoublyLinkedList {
         current.next = newLink; // старое значение current --> newLink
         return true; // Ключ найден, вставка выполнена
     }
+
+    Link deleteKey(long key) { // Удаление элемента с заданным ключом (предполагается, что список не пуст)
+        Link current = first; // От начала списка
+        while (current.dData != key) { // Пока не будет найдено совпадение
+            current = current.next; // Переход к следующему элементу
+            if (current == null)
+                return null; // Ключ не найден
+        }
+        if (current == first) // Ключ найден; это первый элемент?
+            first = current.next; // first --> старое значение next
+        else // Не первый элемент
+            current.previous.next = current.next; // старое значение previous --> старое значение next
+        if (current == last) // Последний элемент?
+            last = current.previous; // старое значение previous <-- last
+        else // Не последний элемент
+            current.next.previous = current.previous; // Старое значение previous <-- старое значение next
+        return current; // Возвращение удаленного элемента
+    }
+
+    void displayForward() {
+        System.out.print("List (first-->last): ");
+        Link current = first; // От начала списка
+        while (current != null) { // Перемещение до конца списка
+            current.displayLink(); // Вывод данных
+            current = current.next; // Переход к следующему элементу
+        }
+        System.out.println();
+    }
+
+    void displayBackward() {
+        System.out.print("List (last-->first): ");
+        Link current = last; // От начала списка
+        while (current != null) { // Перемещение до конца списка
+            current.displayLink(); // Вывод данных
+            current = current.previous; // Переход к следующему элементу
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+
+    }
 }
