@@ -11,6 +11,6 @@ class Link {
     }
 
     void displayLink() { // Вывод содержимого элемента
-        System.out.print(this.dData + " ");
+        System.out.print(dData + " ");
     }
 }
