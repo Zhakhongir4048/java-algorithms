@@ -1,0 +1,21 @@
+В этом случае список должен предоставить открытые методы, при помощи которых итератор сможет изменить first.
+Эти методы LinkList называются getFirst() и setFirst(). (Недостаток такого решения заключается в том,
+что эти методы позволят изменить first любому желающему, что создает определенный риск.)
+Ниже приведена переработанная (хотя все еще незавершенная) версия класса итератора,
+в которую включены эти дополнительные поля вместе с методами reset() и nextLink():
+class ListIterator() {
+    private Link current; // Ссылка на текущий элемент списка
+    private Link previous; // Ссылка на предыдущий элемент списка
+    private LinkList ourList; // Ссылка на "родительский" список
+
+    public void reset() { // set to start of list
+       current = ourList.getFirst(); // current --> first
+       previous = null; // previous --> null
+    }
+
+    public void nextLink() { // Переход к следующему элементу
+       previous = current; // Присваивание текущего элемента previous
+       current = current.next; // Присваивание текущему элементу next
+    }
+ ...
+}
