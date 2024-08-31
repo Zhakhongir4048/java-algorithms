@@ -29,6 +29,4 @@ class LinkList {
         }
         System.out.println();
     }
-
-
 }
