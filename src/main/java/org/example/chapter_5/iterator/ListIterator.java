@@ -74,6 +74,33 @@ class ListIterator {
     }
 
     public static void main(String[] args) throws IOException {
+        // Следующий фрагмент удаляет из списка все элементы с ключами, кратными 3.
+        LinkList list = new LinkList(); // Создание списка
+        ListIterator iter = list.getIterator(); // Создание итератора
+
+        iter.insertAfter(21); // Вставка элементов
+        iter.insertAfter(40);
+        iter.insertAfter(30);
+        iter.insertAfter(7);
+        iter.insertAfter(45);
+
+        list.displayList(); // Вывод содержимого списка
+
+        iter.reset(); // От начала списка
+        Link link = iter.getCurrent(); // Получение текущего элемента
+        if (link.dData % 3 == 0) // Если ключ кратен 3
+            iter.deleteCurrent(); // Элемент удаляется. Следует проверять наличие элементов в списке.
+
+        while (!iter.atEnd()) { // Перемещение до конца списка
+            iter.nextLink(); // Переход к следующему элементу
+            link = iter.getCurrent(); // Получение текущего элемента
+            if (link.dData % 3 == 0) // Если ключ кратен 3
+                iter.deleteCurrent(); // Элемент удаляется. Следует проверять наличие элементов в списке.
+        }
+
+        list.displayList(); // Вывод содержимого списка
+        System.out.println("--------------------------------------");
+
         LinkList theList = new LinkList(); // Создание списка
         ListIterator iter1 = theList.getIterator(); // Создание итератора
         long value;
