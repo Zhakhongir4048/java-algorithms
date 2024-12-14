@@ -23,6 +23,18 @@ public class TriangleRecursion {
         }
     }
 
+    static int triangleWithLog(int n) {
+        System.out.println("Entering: n=" + n);
+        if (n == 1) {
+            System.out.println("Returning 1");
+            return 1;
+        } else {
+            int temp = n + triangle(n - 1);
+            System.out.println("Returning " + temp);
+            return temp;
+        }
+    }
+
     static int getInt() throws IOException {
         return Integer.parseInt(getString());
     }
