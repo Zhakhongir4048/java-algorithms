@@ -1,4 +1,4 @@
-package org.example.chapter_6;
+package org.example.chapter_6.triangle;
 
 public class TriangleLoop {
 
