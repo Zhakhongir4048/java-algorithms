@@ -24,7 +24,7 @@ public class MergeSort {
             arrayC[cDex++] = arrayA[aDex++]; // в arrayA остались элементы
         }
         while (bDex < sizeB) { // Массив arrayA пуст,
-            arrayC[cDex++] = arrayB[bDex++];  // в arrayB остались элементы
+            arrayC[cDex++] = arrayB[bDex++]; // в arrayB остались элементы
         }
     }
 
