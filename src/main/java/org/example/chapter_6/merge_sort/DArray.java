@@ -1,5 +1,7 @@
 package org.example.chapter_6.merge_sort;
 
+import java.util.Arrays;
+
 public class DArray {
 
     private final long[] theArray; // Массив, который будет отсортирован
@@ -29,14 +31,18 @@ public class DArray {
 
     // Метод, реализующий алгоритм сортировки слиянием
     private void mergeSort(long[] workSpace, int lowerBound, int upperBound) {
+        System.out.println("Entering " + lowerBound + "-" + upperBound);
         // Если нижняя граница равна верхней, то массив содержит единственный элемент и уже отсортирован
         if (lowerBound == upperBound) {
+            System.out.println("Base-Case Return " + lowerBound + "-" + upperBound);
             return;
         } else {
             int mid = (lowerBound + upperBound) / 2; // Находим средний индекс
             // Рекурсивно сортируем левую половину
+            System.out.println("Will sort low half of " + lowerBound + "-" + upperBound);
             mergeSort(workSpace, lowerBound, mid);
             // Рекурсивно сортируем правую половину
+            System.out.println("Will sort high half of " + lowerBound + "-" + upperBound);
             mergeSort(workSpace, mid + 1, upperBound);
             // Сливаем две отсортированные половины
             merge(workSpace, lowerBound, mid + 1, upperBound);
@@ -45,6 +51,7 @@ public class DArray {
 
     // Метод для слияния двух отсортированных подмассивов
     private void merge(long[] workSpace, int leftStart, int rightStart, int rightEnd) {
+        System.out.println("Will merge halves into " + leftStart + "-" + rightEnd);
         int begin = leftStart; // Начальный индекс для записи обратно в оригинальный массив
         int workSpaceIndex = 0; // Индекс для рабочей области
         int leftEnd = rightStart - 1; // Конец левого подмассива
@@ -73,6 +80,7 @@ public class DArray {
         for (int i = 0; i < elementsCount; i++) {
             theArray[begin + i] = workSpace[i]; // Вставляем из рабочей области обратно в оригинал
         }
+        System.out.println(Arrays.toString(workSpace));
     }
 
     public static void main(String[] args) {
