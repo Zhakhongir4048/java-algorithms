@@ -3,6 +3,7 @@ package org.example.chapter_6.recursion_replace_stack;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Stack;
 
 public class StackTriangleApp {
 
@@ -20,7 +21,7 @@ public class StackTriangleApp {
     }
 
     public static void recTriangle() {
-        theStack = new StackX(10000);
+        theStack = new StackX(theNumber);
         codePart = 1;
         while (!step()) { // Вызывать, пока step() не вернет true
             // Пустое тело цикла
@@ -28,6 +29,7 @@ public class StackTriangleApp {
     }
 
     public static boolean step() {
+        System.out.println("case " + codePart + ". " + "theAnswer=" + theAnswer + " Stack: " + theStack);
         switch (codePart) {
             case 1: // Исходный вызов
                 theseParams = new Params(theNumber, 6);
@@ -72,5 +74,22 @@ public class StackTriangleApp {
 
     public static int getInt() throws IOException {
         return Integer.parseInt(getString());
+    }
+
+    /**
+     * Это лично мною написанный вариант
+     */
+    public static void triangle(int n) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(n);
+
+        int count = 0;
+
+        while (!stack.isEmpty() && stack.peek() != 0) {
+            count += stack.peek();
+            stack.push(stack.pop() - 1);
+        }
+
+        System.out.println(count);
     }
 }

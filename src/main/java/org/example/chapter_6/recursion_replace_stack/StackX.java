@@ -1,5 +1,7 @@
 package org.example.chapter_6.recursion_replace_stack;
 
+import java.util.Arrays;
+
 public class StackX {
 
     private int maxSize; // Размер массива StackX
@@ -22,5 +24,10 @@ public class StackX {
 
     public Params peek() { // Чтение элемента на вершине стека
         return stackArray[top];
+    }
+
+    @Override
+    public String toString() {
+        return Arrays.toString(stackArray);
     }
 }

@@ -9,4 +9,12 @@ public class Params { // Параметры, сохраняемые в стек�
         this.n = n;
         this.returnAddress = returnAddress;
     }
+
+    @Override
+    public String toString() {
+        return "(" +
+                "n=" + n +
+                ", returnAddress=" + returnAddress +
+                ')';
+    }
 }
