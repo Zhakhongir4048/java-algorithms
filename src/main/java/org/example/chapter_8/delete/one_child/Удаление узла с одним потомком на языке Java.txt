@@ -4,3 +4,21 @@
 заменяется соответствующим поддеревом.
 
 Приведенный ниже код следует за кодом удаления листовых узлов из предыдущего подраздела:
+// Продолжение delete()...
+// Если нет правого потомка, узел заменяется левым поддеревом
+else if(current.rightChild==null)
+    if(current == root)
+        root = current.leftChild;
+    else if(isLeftChild) // Левый потомок родителя
+        parent.leftChild = current.leftChild;
+    else // Правый потомок родителя
+        parent.rightChild = current.leftChild;
+// Если нет левого потомка, узел заменяется правым поддеревом
+else if(current.leftChild==null)
+    if(current == root)
+        root = current.rightChild;
+    else if(isLeftChild) // Левый потомок родителя
+        parent.leftChild = current.rightChild;
+    else // Правый потомок родителя
+        parent.rightChild = current.rightChild;
+// Продолжение...
