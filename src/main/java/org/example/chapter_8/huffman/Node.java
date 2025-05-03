@@ -1,23 +1,14 @@
 package org.example.chapter_8.huffman;
 
-public class Node<K, V> {
+public class Node {
 
-    public K key; // Данные, используемые в качестве ключа
-    public V value; // Другие данные
-    public Node<K, V> leftChild; // Левый потомок узла
-    public Node<K, V> rightChild; // Правый потомок узла
+    Character key; // Данные, используемые в качестве ключа
+    Integer value; // Другие данные
+    Node leftChild; // Левый потомок узла
+    Node rightChild; // Правый потомок узла
 
-    public Node(K key, V value) {
+    Node(Character key, Integer value) {
         this.key = key;
         this.value = value;
     }
-
-    public void displayNode() { // Вывод узла
-        System.out.print('{');
-        System.out.print(key);
-        System.out.print(", ");
-        System.out.print(value);
-        System.out.print("} ");
-    }
-
 }

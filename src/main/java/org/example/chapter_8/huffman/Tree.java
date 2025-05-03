@@ -1,21 +1,10 @@
 package org.example.chapter_8.huffman;
 
-
-public class Tree implements Comparable<Tree> {
-
-    private final Node<Character, Integer> root;
-
-    public Tree(Node<Character, Integer> root) {
-        this.root = root;
-    }
-
-    public Node<Character, Integer> getRoot() {
-        return root;
-    }
+record Tree(Node root) implements Comparable<Tree> {
 
     @Override
     public int compareTo(Tree o) {
-        return root.value.compareTo(o.root.value);
+        return Integer.compare(root.value, o.root.value);
     }
 
     @Override
