@@ -9,6 +9,6 @@ record Tree(Node root) implements Comparable<Tree> {
 
     @Override
     public String toString() {
-        return root.key + " " + root.value;
+        return "(" + root.key + ", " + root.value + ")";
     }
 }
