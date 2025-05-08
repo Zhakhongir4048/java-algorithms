@@ -23,16 +23,25 @@ public class Main {
         DfsTreeTraversal traversalDfs = new DfsTreeTraversal();
         BfsTreeTraversal traversalBfs = new BfsTreeTraversal();
 
-        System.out.print("Inorder (DFS): ");
-        traversalDfs.inorder(root);
+        System.out.print("Inorder recursive (DFS): ");
+        traversalDfs.inorderRecursive(root);
+        System.out.println();
+        System.out.print("Inorder with stack (DFS): ");
+        traversalDfs.inorderWithStack(root);
         System.out.println();
 
-        System.out.print("Preorder (DFS): ");
-        traversalDfs.preorder(root);
+        System.out.print("Preorder recursive (DFS): ");
+        traversalDfs.preorderRecursive(root);
+        System.out.println();
+        System.out.print("Preorder with stack (DFS): ");
+        traversalDfs.preorderWithStack(root);
         System.out.println();
 
-        System.out.print("Postorder (DFS): ");
-        traversalDfs.postorder(root);
+        System.out.print("Postorder recursive (DFS): ");
+        traversalDfs.postorderRecursive(root);
+        System.out.println();
+        System.out.print("Postorder with stack (DFS): ");
+        traversalDfs.postorderWithStack(root);
         System.out.println();
 
         System.out.print("Level Order (BFS): ");
