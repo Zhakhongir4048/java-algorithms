@@ -107,6 +107,9 @@ public class Tree {
             // Поиск преемника для удаляемого узла (current)
             Node successor = getSuccessor(current);
 
+            // Обязательно! Левого потомка удаляемого узла привязать к преемнику
+            successor.leftChild = current.leftChild;
+
             // Родитель current связывается с посредником
             if (current == root) {
                 root = successor;
