@@ -6,13 +6,10 @@ import java.util.PriorityQueue;
 
 public class HuffmanCoding {
 
-    // Используем HashMap для кодов Хаффмана для гибкости
-    private static final Map<Character, String> huffmanCodes = new HashMap<>();
-
     /**
      * Построение дерева Хаффмана
      */
-    public static HuffmanTree buildTree(String source) {
+    public static HuffmanNode buildTree(String source) {
 
         // Шаг 1: Создаем карту частот
         HashMap<Character, Integer> countMap = new HashMap<>();
@@ -38,21 +35,27 @@ public class HuffmanCoding {
         }
 
         // Получаем корень дерева
-        return priorityQueue.poll();
+        return priorityQueue.poll().root();
     }
 
     /**
      * Генерация кода Хаффмана
      */
-    public static void generateCodes(HuffmanNode root, String code) {
+    public static Map<Character, String> generateCodes(HuffmanNode root) {
+        Map<Character, String> codes = new HashMap<>();
+        generateCodesHelper(root, "", codes);
+        return codes;
+    }
+
+    private static void generateCodesHelper(HuffmanNode root, String code, Map<Character, String> huffmanCodes) {
         if (root != null) {
             if (root.left == null && root.right == null && root.key != null) {
                 // Записываем код для символа в таблицу
                 huffmanCodes.put(root.key, code);
                 System.out.println("'" + root.key + "' → " + code);
             } else {
-                generateCodes(root.left, code + "0");
-                generateCodes(root.right, code + "1");
+                generateCodesHelper(root.left, code + "0", huffmanCodes);
+                generateCodesHelper(root.right, code + "1", huffmanCodes);
             }
         }
     }
@@ -60,7 +63,7 @@ public class HuffmanCoding {
     /**
      * Кодирование текста
      */
-    public static String encode(String text) {
+    public static String encode(String text, Map<Character, String> huffmanCodes) {
         StringBuilder encoded = new StringBuilder();
         for (char ch : text.toCharArray()) {
             encoded.append(huffmanCodes.get(ch));
