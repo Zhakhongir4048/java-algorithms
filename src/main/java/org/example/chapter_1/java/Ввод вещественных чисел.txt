@@ -1,0 +1,12 @@
+Типы float и double обрабатываются примерно так же, как int, но процесс преобразования немного усложняется.
+Пример чтения типа double:
+
+public double getDouble() throws IOException {
+    String s = getString();
+    Double aDub = Double.valueOf(s);
+    return aDub.doubleValue();
+}
+
+Сначала String преобразуется в объект типа Double (D в верхнем регистре!) — класса-«обертки» для
+примитивного значения double. Затем метод doubleValue() класса Double преобразует объект к типу double.
+Для типа float существует аналогичный класс Float с аналогичными методами valueOf() и floatValue().
