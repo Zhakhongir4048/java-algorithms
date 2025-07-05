@@ -1,0 +1,19 @@
+public int find(long searchKey) {
+    int lowerBound = 0;
+    int upperBound = nElems-1;
+    int curIn;
+    while(true) {
+        curIn = (lowerBound + upperBound ) / 2;
+        if(a[curIn]==searchKey)
+            return curIn; // Элемент найден
+        else if(lowerBound > upperBound)
+            return -1; // Элемент не найден
+        else // Деление диапазона {
+            if(a[curIn] < searchKey)
+                lowerBound = curIn + 1; // В верхней половине
+            else
+            upperBound = curIn - 1; // В нижней половине
+        }
+ }
+
+}

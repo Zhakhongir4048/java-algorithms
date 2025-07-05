@@ -24,7 +24,7 @@ public class OrdArray {
             if (a[curIn] == searchKey) {
                 return curIn; // Элемент найден
             } else if (lowerBound > upperBound) {
-                return nElems; // Элемент не найден
+                return -1; // Элемент не найден
             } else { // Деление диапазона
                 if (a[curIn] < searchKey) {
                     lowerBound = curIn + 1;  // В верхней половине
@@ -56,11 +56,11 @@ public class OrdArray {
     }
 
     public boolean delete(long value) {
-        int j = find(value); // Двоичный поиск
-        if (j == nElems) // Найти не удалось
+        int deleteIndex = find(value); // Двоичный поиск
+        if (deleteIndex == -1) // Найти не удалось
             return false;
         else { // Элемент найден
-            for (int k = j; k < nElems; k++) { // Перемещение последующих элементов
+            for (int k = deleteIndex; k < nElems; k++) { // Перемещение последующих элементов
                 a[k] = a[k + 1];
             }
             nElems--; // Уменьшение размера
