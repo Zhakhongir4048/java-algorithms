@@ -1,13 +1,12 @@
-package org.example.chapter_2;
+package org.example.chapter_2.example;
 
 public class ArrayApp {
 
     public static void main(String[] args) {
-        long[] arr; // Ссылка на массив
-        arr = new long[100]; // Создание массива
+        long[] arr = new long[100]; // Создание массива
         int nElems; // Количество элементов
         int j; // Счетчик цикла
-        long searchKey; // Ключи искомого элемента
+        long searchKey; // Ключ искомого элемента
 
         arr[0] = 77; // Вставка 10 элементов
         arr[1] = 99;
