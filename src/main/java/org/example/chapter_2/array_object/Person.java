@@ -1,4 +1,4 @@
-package org.example.chapter_2;
+package org.example.chapter_2.array_object;
 
 import java.util.Objects;
 
