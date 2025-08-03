@@ -1,4 +1,4 @@
-package org.example.chapter_3;
+package org.example.chapter_3.select_sort;
 
 public class ArraySel {
 

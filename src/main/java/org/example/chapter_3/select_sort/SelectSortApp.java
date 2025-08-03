@@ -1,7 +1,5 @@
 package org.example.chapter_3.select_sort;
 
-import org.example.chapter_3.ArraySel;
-
 public class SelectSortApp {
 
     public static void main(String[] args) {
